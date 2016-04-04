@@ -40,4 +40,26 @@ public class Segment
     public int getPosInicialY(){
         return posY;
     }
+    
+    /**
+     * Método que devuelve la posicion final en el eje X de un segmento
+     */
+    public int getPosFinalX(){
+        int posFinalX = posX;
+        if (direccion == 0 || direccion == 180){
+            posFinalX = posX + LONGITUD_SEGMENTO;
+        }
+        return posFinalX;
+    }
+    
+    /**
+     * Método que devuelve la posicion final en el eje Y de un segmento
+     */
+    public int getPosFinalY(){
+        int posFinalY = posY;
+        if (direccion == 90 || direccion == 270){
+            posFinalY = posY + LONGITUD_SEGMENTO;
+        }
+        return posFinalY;
+    }
 }
