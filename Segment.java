@@ -26,4 +26,18 @@ public class Segment
         this.posY = posY;
         this.color = color;
     }
+    
+    /**
+     * Método que devuelve la posicion inicial en el eje X de un segmento
+     */
+    public int getPosInicialX(){
+        return posX;
+    }
+        
+    /**
+     * Método que devuelve la posicion inicial en el eje Y de un segmento
+     */
+    public int getPosInicialY(){
+        return posY;
+    }
 }
