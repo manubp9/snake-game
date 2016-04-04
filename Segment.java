@@ -62,4 +62,11 @@ public class Segment
         }
         return posFinalY;
     }
+    
+    /**
+     * Método que devuelve la direccion en la que se ha creado el segmento: 0º, 90º, 180º, 270º
+     */
+    public int getDireccion(){
+        return direccion;
+    }
 }
