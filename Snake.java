@@ -1,5 +1,6 @@
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Write a description of class Snake here.
@@ -20,6 +21,6 @@ public class Snake
      */
     public Snake()
     {
-
+        
     }
 }

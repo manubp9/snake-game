@@ -1,5 +1,4 @@
 import java.awt.Color;
-import java.awt.geom.*;
 
 /**
  * Write a description of class Segment here.
