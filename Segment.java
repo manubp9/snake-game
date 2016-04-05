@@ -23,6 +23,7 @@ public class Segment
     
     /**
      * Constructor for objects of class Segment
+     * Direcciones válidas: 0 DERECHA, 90 ABAJO, 180 IZQUIERDA, 270 ARRIBA
      */
     public Segment(int direccion, int posX, int posY)
     {
@@ -32,6 +33,7 @@ public class Segment
         this.posY = posY;
         color = Color.BLACK;
         canvas = new Canvas("myCanvas",500,500);
+        dibujar();
     }
     
     /**
