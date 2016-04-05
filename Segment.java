@@ -53,8 +53,11 @@ public class Segment
      */
     public int getPosFinalX(){
         int posFinalX = posX;
-        if (direccion == DIRECCION_DERECHA || direccion == DIRECCION_IZQUIERDA){
+        if (direccion == DIRECCION_DERECHA){
             posFinalX = posX + LONGITUD_SEGMENTO;
+        }
+        else if (direccion == DIRECCION_IZQUIERDA){
+            posFinalX = posX - LONGITUD_SEGMENTO;
         }
         return posFinalX;
     }
@@ -64,8 +67,11 @@ public class Segment
      */
     public int getPosFinalY(){
         int posFinalY = posY;
-        if (direccion == DIRECCION_ABAJO || direccion == DIRECCION_ARRIBA){
+        if (direccion == DIRECCION_ABAJO){
             posFinalY = posY + LONGITUD_SEGMENTO;
+        }
+        else if (direccion == DIRECCION_ARRIBA){
+            posFinalY = posY - LONGITUD_SEGMENTO;
         }
         return posFinalY;
     }
