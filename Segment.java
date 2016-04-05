@@ -109,8 +109,11 @@ public class Segment
     /**
      * Método para comprobar si el segmento colisiona con otro
      */
-    public boolean colisiona(){
+    public boolean colisiona(Segment segmento){
         boolean colisiona = false;
+        if (getPosFinalX() == segmento.getPosInicialX() || getPosFinalY() == segmento.getPosInicialY()){
+            colisiona = true;
+        }
         return colisiona;
     }
 }
