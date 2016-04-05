@@ -15,15 +15,16 @@ public class Segment
     private int posY;
     private Color color;
     private Canvas canvas;
-    private static final int LONGITUD_SEGMENTO = 40;
+    public static final int LONGITUD_SEGMENTO = 40;
+    private static final int DIFERENCIA_DE_GRADOS_ENTRE_DIRECCIONES = 90;
     private static final int DIRECCION_DERECHA = 0;
-    private static final int DIRECCION_ABAJO = 90;
-    private static final int DIRECCION_IZQUIERDA = 180;
-    private static final int DIRECCION_ARRIBA = 270;
+    private static final int DIRECCION_ABAJO = 1;
+    private static final int DIRECCION_IZQUIERDA = 2;
+    private static final int DIRECCION_ARRIBA = 3;
     
     /**
      * Constructor for objects of class Segment
-     * Direcciones válidas: 0 DERECHA, 90 ABAJO, 180 IZQUIERDA, 270 ARRIBA
+     * Direcciones válidas: 0 DERECHA, 1 ABAJO, 2 IZQUIERDA, 3 ARRIBA
      */
     public Segment(int direccion, int posX, int posY)
     {
@@ -83,7 +84,7 @@ public class Segment
      * 0º DERECHA, 90º ABAJO, 180º IZQUIERDA, 270º ARRIBA
      */
     public int getDireccion(){
-        return direccion;
+        return direccion * DIFERENCIA_DE_GRADOS_ENTRE_DIRECCIONES;
     }
     
     /**
@@ -103,5 +104,13 @@ public class Segment
         else if (direccion == DIRECCION_ARRIBA){
             canvas.drawLine(posX, posY, posX, posY - LONGITUD_SEGMENTO);
         }
+    }
+    
+    /**
+     * Método para comprobar si el segmento colisiona con otro
+     */
+    public boolean colisiona(){
+        boolean colisiona = false;
+        return colisiona;
     }
 }
