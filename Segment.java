@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.geom.*;
 
 /**
  * Write a description of class Segment here.
@@ -13,18 +14,24 @@ public class Segment
     private int posX;
     private int posY;
     private Color color;
-    private static final int LONGITUD_SEGMENTO = 4;
+    private Canvas canvas;
+    private static final int LONGITUD_SEGMENTO = 40;
+    private static final int DIRECCION_DERECHA = 0;
+    private static final int DIRECCION_ABAJO = 90;
+    private static final int DIRECCION_IZQUIERDA = 180;
+    private static final int DIRECCION_ARRIBA = 270;
     
     /**
      * Constructor for objects of class Segment
      */
-    public Segment(int longitud, int direccion, int posX, int posY, Color color)
+    public Segment(int direccion, int posX, int posY)
     {
-        this.longitud = longitud;
+        longitud = LONGITUD_SEGMENTO;
         this.direccion = direccion;
         this.posX = posX;
         this.posY = posY;
-        this.color = color;
+        color = Color.BLACK;
+        canvas = new Canvas("myCanvas",500,500);
     }
     
     /**
@@ -46,7 +53,7 @@ public class Segment
      */
     public int getPosFinalX(){
         int posFinalX = posX;
-        if (direccion == 0 || direccion == 180){
+        if (direccion == DIRECCION_DERECHA || direccion == DIRECCION_IZQUIERDA){
             posFinalX = posX + LONGITUD_SEGMENTO;
         }
         return posFinalX;
@@ -57,16 +64,36 @@ public class Segment
      */
     public int getPosFinalY(){
         int posFinalY = posY;
-        if (direccion == 90 || direccion == 270){
+        if (direccion == DIRECCION_ABAJO || direccion == DIRECCION_ARRIBA){
             posFinalY = posY + LONGITUD_SEGMENTO;
         }
         return posFinalY;
     }
     
     /**
-     * Método que devuelve la direccion en la que se ha creado el segmento: 0º, 90º, 180º, 270º
+     * Método que devuelve la direccion en la que se ha creado el segmento: 
+     * 0º DERECHA, 90º ABAJO, 180º IZQUIERDA, 270º ARRIBA
      */
     public int getDireccion(){
         return direccion;
+    }
+    
+    /**
+     * Método que dibuja un segmento en el lienzo
+     */
+    public void dibujar(){
+        canvas.setForegroundColor(color);
+        if (direccion == DIRECCION_DERECHA){
+            canvas.drawLine(posX, posY, posX + LONGITUD_SEGMENTO, posY);
+        }
+        else if (direccion == DIRECCION_ABAJO){
+            canvas.drawLine(posX, posY, posX, posY + LONGITUD_SEGMENTO);
+        }
+        else if (direccion == DIRECCION_IZQUIERDA){
+            canvas.drawLine(posX, posY, posX - LONGITUD_SEGMENTO, posY);
+        }
+        else if (direccion == DIRECCION_ARRIBA){
+            canvas.drawLine(posX, posY, posX, posY - LONGITUD_SEGMENTO);
+        }
     }
 }
