@@ -37,14 +37,21 @@ public class SnakeGame
         while(serpiente.mover())
 
         {
-            
             serpiente.dibujar(lienzo);
             lienzo.wait(100);
             serpiente.borrar(lienzo);
-
         }
         serpiente.dibujar(lienzo);
         lienzo.drawString("GAME OVER",220, 240);
 
+    }
+    /**
+     * que pinte una serie de galletas de forma aleatoria por la pantalla pero en posiciones que la serpiente pueda comer. 
+     * Cada vez que la serpiente come una galleta se hace un segmento más larga. La serpiente debe moverse por pantalla sin parar hasta que se quede sin salida. 
+     * Añade los métodos y las clases que consideres necesarios.
+     */
+    public void startGame()
+    {
+        
     }
 }
